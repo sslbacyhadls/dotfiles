@@ -6,7 +6,7 @@ include ~/.config/sway/theme
 
 corner_radius 0
 
-default_dim_inactive 0.8
+default_dim_inactive 0.2
 
 blur enable
 
@@ -28,7 +28,7 @@ set $mod Mod4
 #############
 
 set $term alacritty
-set $menu wmenu-run
+set $menu rofi -show run
 
 ###########
 # OUTPUTS #
@@ -85,13 +85,14 @@ bar {
   strip_workspace_numbers no
 
   status_command i3blocks
-  font pango:DepartureMono Nerd Font 11
+  #swaybar_command waybar
+  font pango:Noto Nerd Font 11
 
   colors {
     background         $base
     statusline         $text
     focused_statusline $text
-    focused_separator  $base
+    focused_separator  $text
 
     # target           border bg        text
     focused_workspace  $base  $mauve    $crust
